@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.todolist {
+    width: 100%;
+    max-width: 600px;
+}
+
+.todolist header {
+    padding: 15px;
+    background-color: aquamarine;
+    color: black;
+    font-size: 1.3em;
+}
+
+.wrapper-list ul.list {
+    list-style: none;
+}
+
+.wrapper-list ul.list li {
+    background-color: rgb(210, 193, 230);
+    border-bottom: 1px solid #8c79a1;
+    color: rgb(55, 29, 65);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    transition: background-color 300ms ease;
+}
+
+.wrapper-list ul.list li:hover button.remove {
+    opacity: 1;
+}
+
+.wrapper-list ul.list li:hover {
+    background-color: rgb(197, 175, 223);
+}
+
+.wrapper-list ul.list .check {
+    background-color: rgb(97, 71, 122);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 300ms ease;
+    position: relative;
+}
+
+.wrapper-list ul.list .check:hover,
+.wrapper-list ul.list .done .check {
+    background-color: rgb(79, 50, 104);
+}
+
+.wrapper-list ul.list .done .check:after {
+    display: block;
+    content: '';
+    background-color: aquamarine;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
+.wrapper-list ul.list .done .task {
+    text-decoration: line-through;
+}
+
+.wrapper-list ul.list button.remove {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: crimson;
+    color: white;
+    font-weight: 300;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+    opacity: 0;
+    line-height: 50%;
+}
+
+.wrapper-list ul.list li.hidden {
+    display: none;
+}
+
+.wrapper-list ul.list li.removed {
+    animation: collapseItem 300ms ease;
+}
+
+.todolist footer {
+    background-color: black;
+}
+
+.todolist footer input {
+    background-color: black;
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 20px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+}
+
+@keyframes collapseItem {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
